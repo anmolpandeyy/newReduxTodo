@@ -10,7 +10,11 @@ class AddTodo extends Component {
 
   addTodo = text => {
     //update redux store
-    this.props.dispatch(addTodo(text));
+    if (text.trim() === "") {
+      return;
+    } else {
+      this.props.dispatch(addTodo(text));
+    }
     this.setState({
       text: ""
     });
