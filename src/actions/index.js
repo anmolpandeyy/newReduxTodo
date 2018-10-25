@@ -1,9 +1,8 @@
 import { ADD_TODO, TOGGLE_TODO, DELETE_TODO } from "./actionTypes";
 
-let nextId = 0;
 export const addTodo = text => ({
   type: ADD_TODO,
-  id: nextId++,
+  id: new Date().getTime(),
   text
 });
 
